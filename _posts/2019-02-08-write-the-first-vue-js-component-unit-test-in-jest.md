@@ -91,7 +91,7 @@ npm i -D vue-test-utils
 
 먼저 `src/components`안에 `MessageList.vue` 컴포넌트를 만듭니다.
 
-```vue
+```html
 <template>
   <ul>
     <li v-for="message in messages">
@@ -110,7 +110,7 @@ export default {
 
 그리고 `App.vue`를 사용하기 위해 다음과 같이 변경해줍시다.
 
-```vue
+```html
 <template>
   <div id="app">
     <MessageList :messages="messages"/>

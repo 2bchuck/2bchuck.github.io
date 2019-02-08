@@ -1,14 +1,13 @@
 ---
 layout: post
 title: "Jest에서 Vue.js 컴포넌트 첫번째 단위 테스트 작성"
-description: "Demo post displaying the various ways of highlighting code in Markdown."
+description: "공식 툴과 Jest 프레임워크를 가지고 VueJS 컴포넌트의 단위테스트를 어떻게 작성하는지 배웁니다."
 date: 2019-02-08
 tags: [translations, vue.js, jest, TDD, Alex Jover]
 comments: true
 share: true
 ---
 
-# Jest에서 Vue.js 컴포넌트 첫번째 단위 테스트 작성
 ※ [Alex Jover](https://alexjover.com/blog/)씨의 「[Write the first Vue.js Component Unit Test in Jest](https://alexjover.com/blog/write-the-first-vue-js-component-unit-test-in-jest/)」를 저자의 허락 하에 번역했습니다」)
 
 > <a href="https://leanpub.com/testingvuejscomponentswithjest" alt="Test Vue.js components with Jest"><img width="180" src="https://alexjoverm.github.io/images/vuejest.jpg"></a><br>

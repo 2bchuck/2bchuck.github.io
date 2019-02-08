@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Jest에서 Vue.js 컴포넌트 첫번째 단위 테스트 작성"
+description: "Demo post displaying the various ways of highlighting code in Markdown."
+date: 2019-02-08
+tags: [translations, vue.js, jest, TDD, Alex Jover]
+comments: true
+share: true
+---
+
 # Jest에서 Vue.js 컴포넌트 첫번째 단위 테스트 작성
 ※ [Alex Jover](https://alexjover.com/blog/)씨의 「[Write the first Vue.js Component Unit Test in Jest](https://alexjover.com/blog/write-the-first-vue-js-component-unit-test-in-jest/)」를 저자의 허락 하에 번역했습니다」)
 

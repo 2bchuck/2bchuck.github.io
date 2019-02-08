@@ -95,9 +95,7 @@ npm i -D vue-test-utils
 <template>
   <ul>
     <li v-for="message in messages">
-    {% raw %}
-      {{ message }}
-    {% endraw %}
+    {% raw %}{{ message }}{% endraw %}
     </li>
   </ul>
 </template>

@@ -95,7 +95,7 @@ npm i -D vue-test-utils
 <template>
   <ul>
     <li v-for="message in messages">
-      {{ message }}
+      \{{ message \}}
     </li>
   </ul>
 </template>

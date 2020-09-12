@@ -7,13 +7,13 @@ name:               "The things I didn't know about"
 
 author:
   facebook:         chaehyuk.lee.79
-  youtubeUser:      your-id
-  youtubeChannel:   your-id
+  # youtubeUser:      your-id
+  # youtubeChannel:   your-id
   github:           2bchuck
   linkedin:         chaehyuk-lee-584042109
-  googlePlus:       your-id
-  medium:           your-id
-  tumblr:           your-id
+  # googlePlus:       your-id
+  # medium:           your-id
+  # tumblr:           your-id
   email:            2bchuck@gmail.com
 
 copyright:

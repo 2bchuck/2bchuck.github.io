@@ -597,6 +597,19 @@ html {
     }
   }
 
+  .page-banner-img-reference {
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+    color: white;
+    opacity: 0.8;
+
+    & > a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
   .wrapper {
     height: 100%;
   }

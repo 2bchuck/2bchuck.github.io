@@ -1,67 +1,73 @@
-{%- include functions.html func='log' level='debug' msg='Get banner_html value' -%}
+{%- include functions.html func = 'log' level = 'debug' msg = 'Get banner_html value' -%}
 {% assign name = 'banner_html' %}
-{%- include functions.html func='get_value' -%}
+{%- include functions.html func = 'get_value' -%}
 {% assign banner_html = return %}
 
-{%- include functions.html func='log' level='debug' msg='Get heading value' -%}
+{%- include functions.html func = 'log' level = 'debug' msg = 'Get heading value' -%}
 {% assign name = 'heading' %}
-{%- include functions.html func='get_value' -%}
+{%- include functions.html func = 'get_value' -%}
 {% assign heading = return %}
 
-{%- include functions.html func='log' level='debug' msg='Get subheading value' -%}
+{%- include functions.html func = 'log' level = 'debug' msg = 'Get subheading value' -%}
 {% assign name = 'subheading' %}
-{%- include functions.html func='get_value' -%}
+{%- include functions.html func = 'get_value' -%}
 {% assign subheading = return %}
 
-{%- include functions.html func='get_banner' -%}
+{%- include functions.html func = 'get_banner' -%}
 
 {%- if has_banner -%}
   {%- if banner_background -%}
-  <style>
-    html .page-banner {
-      background: {{ banner_background }};
-    }
-  </style>
+    <style>
+      html .page-banner {
+        background: {{ banner_background }}
+        ;
+      }
+    </style>
   {%- endif -%}
   {%- if banner_height -%}
-  <style>
-    {%- assign num = banner_height | times: 1 -%}
-    {%- assign unit = banner_height | replace_first: num -%}
-    {%- assign banner_min_height = banner_min_height | default: banner_height -%}
-    html .page-banner {
-      height:  {{ banner_height | times: 0.368 | append: unit }};
-      min-height: {{ banner_min_height }};
-    }
-    html[data-scroll-status="top"] .page-banner {
-      height: {{ banner_height }};
-    }
-  </style>
+    <style>
+      {%- assign num = banner_height | times: 1 -%}
+      {%- assign unit = banner_height | replace_first: num -%}
+      {%- assign banner_min_height = banner_min_height | default: banner_height -%}
+      html .page-banner {
+        height: {{ banner_height | times: 0.368 | append: unit }}
+        ;
+        min-height: {{ banner_min_height }}
+        ;
+      }
+      html[data-scroll-status="top"] .page-banner {
+        height: {{ banner_height }}
+        ;
+      }
+    </style>
   {%- endif -%}
 
   {%- if banner_opacity -%}
-  <style>
-    html .page-banner .page-banner-img > *:first-child {
-      opacity: {{ banner_opacity }};
-    }
+    <style>
+      html .page-banner .page-banner-img > *:first-child {
+        opacity: {{ banner_opacity }}
+        ;
+      }
 
-    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
-      opacity: {{ banner_opacity | times: 0.718 }};
-    }
-  </style>
+      html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+        opacity: {{ banner_opacity | times: 0.718 }}
+        ;
+      }
+    </style>
   {%- endif -%}
   {%- if banner_heading_style -%}
-  <style>
-    html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
-      {{ banner_heading_style }}
-    }
-  </style>
+    <style>
+      html .page-banner .page-banner-inner > *:first-child > *:nth-child(1) {
+        {{ banner_heading_style }}
+      }
+    </style>
   {%- endif -%}
   {%- if banner_subheading_style -%}
-  <style>
-    html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
-      {{ banner_subheading_style }}
-    }
-  </style>
+    <style>
+      html .page-banner .page-banner-inner > *:first-child > *:nth-child(2) {
+        {{ banner_subheading_style }}
+      }
+    </style>
   {%- endif -%}
   <section class="page-banner">
     <div class="page-banner-img">
@@ -69,18 +75,17 @@
         <video
           autoplay=""
           poster="{{ banner_image }}"
-          playsinline
-        >
+          playsinline>
           <source src="{{ banner_video }}">
         </video>
         <script>
           (function() {
             var video = document.querySelector('.page-banner .page-banner-img > video');
             var videoPlay = function() {
-              video.play().catch (function() {
-                  video.muted = true;
-                  video.play();
-                });
+              video.play().catch(function() {
+                video.muted = true;
+                video.play();
+              });
             }
 
             video.onloadstart = function() {
@@ -92,12 +97,9 @@
 
             video.onended = function() {
               video.currentTime = {{ banner_start_at }};
-              video.volume = 0;
-            {%- if banner_loop -%}
-              video.play();
-            {%- endif -%}
-            }
-          })();
+              video.volume = 0;{%- if banner_loop -%}video.play();{%- endif -%}
+          }
+        })();
         </script>
       {%- else -%}
         <div style="background-image: url({{ banner_image }})"></div>
@@ -110,8 +112,8 @@
 
         {%- if banner_html -%}
 
-        {%- assign banner_html = 'views/' | append: banner_html -%}
-        {%- include {{ banner_html }} -%}
+          {%- assign banner_html = 'views/' | append: banner_html -%}
+          {%- include {{ banner_html }} -%}
 
         {%- else -%}
 
@@ -129,4 +131,3 @@
     </div>
   </section>
 {%- endif -%}
-

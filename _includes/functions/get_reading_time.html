@@ -14,12 +14,12 @@
   {% assign speed = 160 %}
 {% endif %}
 
-{%- include functions.html func='get_article_words' -%}
+{%- include functions.html func = 'get_article_words' -%}
 {% assign words = return %}
 
 {% assign total_mins = words
-  | divided_by: speed
-  | at_least: 1 %}
+ | divided_by: speed
+ | at_least: 1 %}
 
 {% assign hours = total_mins | divided_by: 60 %}
 {% assign mins = total_mins | modulo: 60 %}
@@ -32,10 +32,10 @@
     {% assign unit = unit | append: "s" %}
   {% endif %}
   {% assign return = return
-    | append: " "
-    | append: hours
-    | append: " "
-    | append: unit %}
+   | append: " "
+   | append: hours
+   | append: " "
+   | append: unit %}
 {% endif %}
 
 {% assign unit = "min" %}
@@ -43,7 +43,7 @@
   {% assign unit = unit | append: "s" %}
 {% endif %}
 {% assign return = return
-  | append: " "
-  | append: mins
-  | append: " "
-  | append: unit %}
+ | append: " "
+ | append: mins
+ | append: " "
+ | append: unit %}
